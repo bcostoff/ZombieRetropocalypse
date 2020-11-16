@@ -1,0 +1,29 @@
+<!DOCTYPE html><html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>Zombies</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/all.css" />
+</head>
+<body>
+  <div id="angleText" style="position:absolute;top:25px;text-align:center;height:40px;line-height:40px;z-index:10;width:100%;color:#ffffff;"></div>
+  <div id="ui" style="position:absolute;left:15px;top:5px;height:40px;line-height:40px;z-index:10;width:100%;color:#ffffff;">Pistol: &infin;</div>
+  
+  <div id="uiContainer" >
+  <!-- <button class="myButton" type="button" id="inventoryBtn"><i class="fas fa-th"></i></button> -->
+  <button class="myButton" type="button" id="cycleBtn"><i class="fas fa-sync-alt"></i></button>
+  </div>
+  
+  <canvas></canvas>
+  
+  <div id="inventory" style="background-color:#fafafa;width:100%;height:100%;z-index:5;position:absolute;top:40px;display:none;">
+  </div>
+  
+  <script src="helpers.js"></script>
+  <script src="joystick.js"></script>
+  <script src="graphics.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
