@@ -1,0 +1,20 @@
+{
+  "name": "Zombie Retropocalypse",
+  "version": "1.0.0",
+  "description": "Survive the Zombie Retropocalypse",
+  "main": "index.html",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "lint": "standard --verbose | snazzy"
+  },
+  "author": "Beau Costoff",
+  "license": "MIT",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    
+  },
+  "engines" : { "node" : "6.11.1" }
+}
