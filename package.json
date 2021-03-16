@@ -4,9 +4,7 @@
   "description": "Survive the Zombie Retropocalypse",
   "main": "index.html",
   "scripts": {
-    "start": "node .",
-    "dev": "nodemon .",
-    "lint": "standard --verbose | snazzy"
+    "start": "node ."
   },
   "author": "Beau Costoff",
   "license": "MIT",
