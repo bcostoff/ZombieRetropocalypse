@@ -2,13 +2,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <title>Zombies</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="css/all.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="headerBar"></div>
+  <div id="menuContainer">
+  <h1>Zombie<br />Retropocalypse</h1>
+  <button type="button" class="start-btn" onclick="startQuickPlay()">Start</button>
+</div>
+<!--   <div id="gameContainer"> -->
   <div id="angleText" style="position:absolute;top:25px;text-align:center;height:40px;line-height:40px;z-index:10;width:100%;color:#ffffff;"></div>
-  <div id="ui" style="position:absolute;left:15px;top:5px;height:40px;line-height:40px;z-index:10;width:100%;color:#ffffff;">Pistol: &infin;</div>
+  <div id="ui">Pistol: &infin;</div>
+  <div id="ui-choppa">GET TO THE CHOPPA!</div>
+  
+  
+  <div id="ui-death"><div>Your brains were munched on!<br /><button class="ui-button" onclick="reset()">Try Again</button></div></div>
+  <div id="ui-success"><div>
+    You Survived!<br /> You are a true and worthy warrior.<br />
+    <button class="ui-button" onclick="reset()">Play Again</button></div>
+  </div>  
+  
   
   <div id="uiContainer" >
   <!-- <button class="myButton" type="button" id="inventoryBtn"><i class="fas fa-th"></i></button> -->
@@ -19,10 +37,14 @@
   
   <div id="inventory" style="background-color:#fafafa;width:100%;height:100%;z-index:5;position:absolute;top:40px;display:none;">
   </div>
-  
+  <div id="time">02:00</div>
+<!--   </div> -->
   <script src="helpers.js"></script>
   <script src="joystick.js"></script>
   <script src="graphics.js"></script>
+  <script src="astar.js"></script>
+  <script src="simplex-noise.js"></script>
+  <script src="quadtree.js"></script>
   <script src="script.js"></script>
   
 </body>

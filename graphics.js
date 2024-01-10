@@ -22,6 +22,15 @@ function fillCircle(centerX, centerY, radius, color) {
     context.fill();
 }
 
+function fillEllipse(centerX, centerY, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise, color) {
+  context.fillStyle = color;
+  context.beginPath();
+  context.ellipse(centerX, centerY, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise)
+//context.ellipse(100, 100, 50, 75, Math.PI / 4, 0, 2 * Math.PI);
+  context.fill();
+  
+}
+
 function drawArc(centerX, centerY, radius, startAngle, endAngle, anticlockwise, lineColor, fillColor) {
     var startAngle = startAngle * (Math.PI/180);
     var endAngle = endAngle * (Math.PI/180);

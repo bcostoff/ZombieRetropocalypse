@@ -94,3 +94,19 @@ function getRandomSpawn(){
   }
   return c;
 }
+
+
+
+function getGridPos(y,x,map) {
+  gridY = Math.floor(y/map.tsize);
+  gridX = Math.floor(x/map.tsize);
+  //return {y:gridY, x:gridX};
+  return [gridY,gridX];
+}
+
+
+function ptInCircle(pt, center, r) {
+    const lhs = Math.pow(center[0] - pt[0], 2) + Math.pow(center[1] - pt[1], 2);
+    const rhs = Math.pow(r, 2);
+    return lhs < rhs ? -1 : (lhs === rhs ? 0 : 1);
+}

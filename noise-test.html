@@ -1,0 +1,76 @@
+<!DOCTYPE html><html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>noise</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  
+  <canvas></canvas>
+  
+  <button style="position:absolute;top:50px;left:50px;height:40px;border-radius:0px;" type ="button" onclick="generateMap()">Generate Map</button>
+  
+  
+<script src="simplex-noise.js"></script>
+
+
+<script>
+
+function generateMap(){
+var context = document.querySelector("canvas").getContext("2d");
+var width = window.innerWidth;
+var height = window.innerHeight;
+
+context.canvas.width = width;
+context.canvas.height = height;
+context.fillStyle = "#000000";
+context.fillRect(0,0,width,height);
+
+var h = height/32;
+var w = width/32;
+
+let gen = new SimplexNoise();
+function noise(nx, ny) {
+  // Rescale from -1.0:+1.0 to 0.0:1.0
+  return gen.noise2D(nx, ny) / 2 + 0.5;
+}
+
+let value = [];   
+for (let y = 0; y < h; y++) {
+  value[y] = [];
+  for (let x = 0; x < w; x++) {      
+    let nx = x/w - 0.5, ny = y/h - 0.5;
+    value[y][x] = noise(6*nx, 6*ny);
+      // value[y][x] = 1 * noise(4 * nx, 1 * ny);
+      //       +  0.5 * noise(6 * nx, 2 * ny);
+      //       + 0.25 * noise(8 * nx, 4 * ny);
+                
+  }
+}
+
+
+for (let row = 0; row < value.length; row++) {
+  for (let col = 0; col < value[0].length; col++) {      
+    // console.log(value[row][col]) 
+    if(col == 0 || col == value[0].length-1 || row == 0 || row == value.length-1){
+      context.fillStyle = 'white';
+    }else{
+      if(value[row][col] <= 0.25){
+        context.fillStyle = 'black';
+      }else if(value[row][col] > 0.25 && value[row][col] <= 0.26){
+        context.fillStyle = 'grey';
+      }else {
+        context.fillStyle = 'white';
+      }
+    }
+    context.fillRect(col*32, row*32, 32, 32);
+  }
+}
+}
+
+</script>
+
+</body>
+</html>
