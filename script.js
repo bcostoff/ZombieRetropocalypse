@@ -28,7 +28,7 @@ var gen = new SimplexNoise();
 var paused = true;
 var gameTime = 0;
 var timeEllapsed = false;
-var scale = 1.1;
+var scale = 1;
 var mapset;
 var currentMap;
 var player;
