@@ -787,7 +787,7 @@ Maps = function(obj){
       for(var i=0;i<self.cols;i++){
         //var index = colRowBrickIndex(i,j);
         //if(brickGrid[index] == 1){
-          context.drawImage(grassTilePic,(self.tsize*i)+x,(self.tsize*j)+y);
+          context.drawImage(grassTilePic,Math.round((self.tsize*i)+x),Math.round((self.tsize*j)+y));
         //}
       }
     }
